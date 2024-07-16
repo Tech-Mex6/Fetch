@@ -23,7 +23,7 @@ class LocalFileManager {
     ///     - fileName: The name of the file where the data will be saved.
     /// - Description: Encodes the provided data into JSON format and saves it
     ///                to the specified file in the cache directory.
-    /// - Return: None
+    /// - Returns: None
     /// - Error Handling: Catches and prints errors if encoding or writing to the file fails.
 
     func saveData<T: Encodable>(_ data: T, fileName: String) {
@@ -42,7 +42,7 @@ class LocalFileManager {
     ///     - type: The type of the data to be decoded, which conforms to the `Decodable` protocol.
     /// - Description:Reads the data from the specified file in the cache directory, decodes it from
     /// JSON format and returns it as the specified type
-    /// - Return: (Optional of the specified type) Returns the decoded data if successful, otherwise it returns
+    /// - Returns: (Optional of the specified type) Returns the decoded data if successful, otherwise it returns
     /// `nil`.
     /// - Error Handling:
     /// Catches and prints errors if reading from the file or decoding fails and returns `nil`
@@ -63,8 +63,8 @@ class LocalFileManager {
     ///     - fileName: The name of the file to check for existence.
     /// - Description:
     /// Checks if a file with the specified name exists in the cache directory.
-    /// - Return:
-    /// Return s `true` if the file exists, otherwise returns `false`
+    /// - Returns:
+    /// Returns `true` if the file exists, otherwise returns `false`
     
     func fileExists(fileName: String) -> Bool {
         let url = cacheDirectory.appendingPathComponent(fileName)
@@ -74,7 +74,7 @@ class LocalFileManager {
     /// - Parameters: None
     /// - Description:
     /// Retrieves the URL of the document directory in the user domain.
-    /// - Return: Returns the URL of the document directory if successful, otherwise returns `nil`
+    /// - Returns: Returns the URL of the document directory if successful, otherwise returns `nil`
 
     private func getFileDirectory() -> URL? {
         guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
